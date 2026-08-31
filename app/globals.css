@@ -77,7 +77,7 @@ img { object-fit: cover; }
 .heroTrust small { color: #b7c6d0; font-size: 9px; margin-top: 3px; }
 .quoteCard { background: rgba(255,255,255,.98); color: var(--ink); border-radius: 16px; padding: 24px; box-shadow: 0 30px 80px rgba(0,0,0,.27); border: 1px solid rgba(255,255,255,.9); }
 .quoteHead { display: flex; justify-content: space-between; gap: 15px; align-items: flex-start; }
-.quoteHead h2, .quoteSuccess h2 { font-family: var(--font-display), "Arial Narrow", Impact, sans-serif; font-size: 28px; text-transform: uppercase; margin: 3px 0 4px; letter-spacing: .01em; line-height: .95; }
+.quoteHead h3, .quoteSuccess h3 { font-family: var(--font-display), "Arial Narrow", Impact, sans-serif; font-size: 28px; text-transform: uppercase; margin: 3px 0 4px; letter-spacing: .01em; line-height: .95; }
 .quoteHead p { margin: 0; color: var(--muted); font-size: 12px; }
 .eyebrow { font-size: 10px !important; line-height: 1.2; letter-spacing: .15em; font-weight: 850; margin: 0; color: var(--navy); }
 .gold { color: #b47b00; }
@@ -120,12 +120,12 @@ fieldset legend { margin-bottom: 7px; }
 .quoteLauncherSteps span { padding: 9px 10px; border-radius: 7px; background: #f1f5f7; color: #526678; font-size: 10px; font-weight: 750; }
 .quoteLauncherNote { display: block; color: #8795a0; font-size: 10px; line-height: 1.5; text-align: center; margin-top: 11px; }
 .quoteProgress { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 0 0 22px; }
-.quoteProgress span { display: grid; justify-items: center; gap: 5px; color: #5f6a75; font-size: 9px; font-weight: 750; }
-.quoteProgress b { display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: #edf2f5; color: #5f6a75; font-size: 10px; }
+.quoteProgress span { display: grid; justify-items: center; gap: 5px; color: #91a0aa; font-size: 9px; font-weight: 750; }
+.quoteProgress b { display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: #edf2f5; color: #748594; font-size: 10px; }
 .quoteProgress span.active { color: var(--navy); }
-.quoteProgress span.active b, .quoteProgress span.complete b { background: var(--gold); color: #fff; }
+.quoteProgress span.active b, .quoteProgress span.complete b { background: var(--gold); color: #1e2a32; }
 .quoteStepIntro { display: grid; gap: 4px; margin: 2px 0 4px; }
-.quoteStepIntro h3 { margin: 0; color: var(--navy); font-size: 15px; letter-spacing: -.02em; }
+.quoteStepIntro h4 { margin: 0; color: var(--navy); font-size: 15px; letter-spacing: -.02em; }
 .quoteStepIntro p { margin: 0; color: var(--muted); font-size: 11px; line-height: 1.55; font-weight: 500; }
 .quoteStepIntro--row { display: flex; align-items: center; justify-content: space-between; margin-top: 8px; }
 .quoteStepIntro--row span { color: var(--muted); font-size: 10px; font-weight: 800; }
@@ -135,13 +135,13 @@ fieldset legend { margin-bottom: 7px; }
 .addressInput.confirmed input { background: transparent; }
 .addressInput .addressCheck { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: #197a4a; font-weight: 900; }
 .addressInput.confirmed input { padding-right: 34px; }
-.addressHelp, .addressConfirmed { margin: 0; color: #5f6a75; font-size: 10px; font-weight: 500; }
+.addressHelp, .addressConfirmed { margin: 0; color: #84929d; font-size: 10px; font-weight: 500; }
 .addressConfirmed { color: #287448; }
 .addressSearchRow { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .addressSearchButton { border: 1px solid #b8c9d2; border-radius: 6px; padding: 6px 8px; background: #f8fafb; color: var(--navy); cursor: pointer; font-size: 9px; font-weight: 800; }
 .addressSearchButton:hover, .addressSearchButton:focus-visible { border-color: #527b96; background: #eef5f8; outline: none; }
 .addressSearchButton:disabled { color: #95a2aa; cursor: not-allowed; }
-.addressSearchRow > span, .addressSearchStatus { margin: 0; color: #5f6a75; font-size: 9px; line-height: 1.4; font-weight: 500; }
+.addressSearchRow > span, .addressSearchStatus { margin: 0; color: #84929d; font-size: 9px; line-height: 1.4; font-weight: 500; }
 .addressSearchStatus { color: #976a00; }
 .addressSuggestions { display: grid; gap: 2px; border: 1px solid #d7e0e6; border-radius: 9px; background: #fff; padding: 7px; box-shadow: 0 14px 32px rgba(13,32,51,.12); }
 .suggestionHint { padding: 4px 7px 6px; color: #8b99a4; font-size: 9px; font-weight: 750; text-transform: uppercase; letter-spacing: .08em; }
@@ -151,10 +151,10 @@ fieldset legend { margin-bottom: 7px; }
 .addressSuggestion span { color: var(--muted); font-size: 10px; line-height: 1.45; }
 .addressSuggestion--fallback { margin-top: 4px; border-top: 1px solid #e4eaee; border-radius: 0 0 7px 7px; }
 .typedAddressChoice { justify-self: start; border: 0; border-bottom: 1px dashed #8b99a4; padding: 0 0 2px; background: transparent; color: var(--navy); cursor: pointer; font-size: 10px; font-weight: 800; }
-.addressProgress { display: flex; gap: 14px; flex-wrap: wrap; padding: 8px 0 3px; color: #5f6a75; font-size: 10px; font-weight: 700; }
+.addressProgress { display: flex; gap: 14px; flex-wrap: wrap; padding: 8px 0 3px; color: #84929d; font-size: 10px; font-weight: 700; }
 .addressProgress span { display: inline-flex; align-items: center; gap: 5px; }
 .addressProgress span.complete { color: #287448; }
-.quoteFinePrint { margin: 2px 0 0; color: #5f6a75; font-size: 10px; line-height: 1.5; }
+.quoteFinePrint { margin: 2px 0 0; color: #84929d; font-size: 10px; line-height: 1.5; }
 .moveSizeGrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
 .moveTypeGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
 .moveSizeOption, .supportOption { display: grid; gap: 4px; border: 1px solid #d7e0e6; border-radius: 9px; padding: 11px; background: #fff; color: var(--ink); text-align: left; cursor: pointer; transition: border-color .2s ease, background .2s ease, transform .2s ease; }
@@ -646,7 +646,7 @@ body { font-family: Arial, Helvetica, sans-serif; background: #fff; color: var(-
 .otmaQuoteSteps small { color: #6d7e8b; font-size: 10px; }
 .otmaQuote .quoteCard, .quotePageGrid .quoteCard, .otmaContact .quoteCard { border-radius: 4px; border: 1px solid #cddbe6; box-shadow: 0 22px 60px rgba(16,37,63,.11); }
 .quoteCard--calculator { padding: 30px; }
-.quoteHead h2, .quoteSuccess h2 { font-family: Arial, Helvetica, sans-serif; text-transform: none; letter-spacing: -.04em; font-weight: 800; }
+.quoteHead h3, .quoteSuccess h3 { font-family: Arial, Helvetica, sans-serif; text-transform: none; letter-spacing: -.04em; font-weight: 800; }
 .progressTrack span { background: var(--blue); }
 .stepCounter { color: var(--blue); background: var(--blue-soft); }
 .formStep input:focus, .formStep select:focus, .formStep textarea:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(23,104,179,.09); }
@@ -1098,7 +1098,7 @@ body { background: #fff; color: var(--ink); }
   --otma-stone: #f2f1ee;
   --otma-warm: #f8f7f4;
   --otma-line: #d8d9d7;
-  --otma-muted: #5f6a75;
+  --otma-muted: #677079;
 }
 
 body {
@@ -1291,7 +1291,7 @@ main { overflow: hidden; }
 .servicesMenuV4List { border-top: 1px solid var(--otma-line); }
 .servicesMenuV4List a { min-height: 93px; display: grid; grid-template-columns: 42px 1fr 28px; gap: 20px; align-items: center; border-bottom: 1px solid var(--otma-line); transition: color .2s ease, padding .2s ease; }
 .servicesMenuV4List a:hover { color: var(--otma-blue-deep); padding-left: 10px; }
-.servicesMenuV4List span { color: #5f6a75; font-size: 9px; font-weight: 700; }
+.servicesMenuV4List span { color: #9a9fa3; font-size: 9px; font-weight: 700; }
 .servicesMenuV4List h3 { margin: 0; font-family: var(--font-manrope); font-size: 20px; font-weight: 560; letter-spacing: -.025em; }
 .servicesMenuV4List svg { width: 17px; }
 
@@ -1351,11 +1351,11 @@ main { overflow: hidden; }
   background: rgba(255,255,255,.98);
   box-shadow: none;
 }
-.quoteWizardFrameV4 .quoteHead h2,
-.quoteSectionV4 .quoteHead h2,
-.quotePageV4 .quoteHead h2,
-.contactQuoteV4 .quoteHead h2,
-.quoteWizardFrameV4 .quoteSuccess h2 {
+.quoteWizardFrameV4 .quoteHead h3,
+.quoteSectionV4 .quoteHead h3,
+.quotePageV4 .quoteHead h3,
+.contactQuoteV4 .quoteHead h3,
+.quoteWizardFrameV4 .quoteSuccess h3 {
   font-family: var(--font-source-serif), Georgia, serif;
   font-size: 34px;
   font-weight: 500;
@@ -1430,10 +1430,6 @@ main { overflow: hidden; }
 .quoteSectionV4 .btn,
 .quotePageV4 .btn,
 .contactQuoteV4 .btn { border-radius: 0; }
-.quoteWizardFrameV4 .btnPrimary,
-.quoteSectionV4 .btnPrimary,
-.quotePageV4 .btnPrimary,
-.contactQuoteV4 .btnPrimary { background: var(--otma-blue-deep); color: #fff; }
 
 /* Reviews — editorial, not cards */
 .reviewsV4 { background: #fff; }
@@ -1445,7 +1441,7 @@ main { overflow: hidden; }
 .reviewsV4List blockquote p { margin: 0; color: #27323a; font-family: var(--font-source-serif), Georgia, serif; font-size: 29px; line-height: 1.42; letter-spacing: -.02em; }
 .reviewsV4List footer { margin-top: 22px; display: flex; gap: 12px; align-items: baseline; }
 .reviewsV4List strong { font-size: 10px; }
-.reviewsV4List span { color: #5f6a75; font-size: 9px; }
+.reviewsV4List span { color: #899096; font-size: 9px; }
 
 /* Final photographic CTA */
 .finalImageCtaV4 {
@@ -1521,7 +1517,7 @@ main { overflow: hidden; }
 .servicesIndexV4Lead > p:not(.premiumLabel) { max-width: 530px; margin: 28px 0 0; color: var(--otma-muted); line-height: 1.8; }
 .servicesIndexV4List { border-top: 1px solid var(--otma-line); }
 .servicesIndexV4List a { min-height: 124px; display: grid; grid-template-columns: 38px 1fr 28px; gap: 20px; align-items: center; border-bottom: 1px solid var(--otma-line); }
-.servicesIndexV4List a > span { color: #5f6a75; font-size: 9px; }
+.servicesIndexV4List a > span { color: #999fa3; font-size: 9px; }
 .servicesIndexV4List h3 { margin: 0 0 7px; font-size: 20px; font-weight: 600; letter-spacing: -.025em; }
 .servicesIndexV4List p { max-width: 580px; margin: 0; color: var(--otma-muted); font-size: 11px; line-height: 1.65; }
 .servicesIndexV4List svg { width: 16px; }
@@ -1624,8 +1620,7 @@ main { overflow: hidden; }
   .mobileNavV4 { padding: 8px 24px 24px; display: grid; background: #fff; border-top: 1px solid var(--otma-line); }
   .mobileNavV4 a:not(.btn) { padding: 14px 0; border-bottom: 1px solid #ececea; color: #303940; font-size: 12px; }
   .mobileNavV4 .btn { margin-top: 18px; }
-.mobileBottomNavV4 { display: grid; }
-.mobileBottomNavV4 .mobileBottomNav__quote { color: #fff; }
+  .mobileBottomNavV4 { display: grid; }
   .homeHeroV4 { height: 720px; min-height: 720px; }
   .homeHeroV4Media { object-position: 61% 44%; }
   .homeHeroV4Shade { background: linear-gradient(90deg,rgba(8,17,24,.88),rgba(8,17,24,.46) 70%,rgba(8,17,24,.28)); }
@@ -1680,7 +1675,7 @@ main { overflow: hidden; }
   .quoteExperienceV4Intro, .quoteSectionV4Intro { margin-bottom: 40px; text-align: left; }
   .quoteExperienceV4Intro > p:not(.premiumLabel), .quoteSectionV4Intro > p:not(.premiumLabel) { margin-left: 0; }
   .quoteWizardFrameV4 .quoteCard, .quoteSectionV4 .quoteCard, .quotePageV4 .quoteCard, .contactQuoteV4 .quoteCard { padding: 20px 17px; }
-  .quoteWizardFrameV4 .quoteHead h2, .quoteSectionV4 .quoteHead h2, .quotePageV4 .quoteHead h2, .contactQuoteV4 .quoteHead h2 { font-size: 29px; }
+  .quoteWizardFrameV4 .quoteHead h3, .quoteSectionV4 .quoteHead h3, .quotePageV4 .quoteHead h3, .contactQuoteV4 .quoteHead h3 { font-size: 29px; }
   .reviewsV4List blockquote p { font-size: 22px; }
   .finalImageCtaV4 { min-height: 510px; }
   .finalImageCtaV4Shade { background: rgba(8,16,22,.69); }

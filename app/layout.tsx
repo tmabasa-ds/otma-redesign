@@ -1,16 +1,20 @@
 import type { Metadata } from "next";
-import { Manrope, Source_Serif_4 } from "next/font/google";
+import { Big_Shoulders, Inter } from "next/font/google";
 import "./globals.css";
+import "./v5.css";
 
-const manrope = Manrope({
+// Match the typography system used in the UG Logistics project exactly:
+// Inter for body/UI copy and Big Shoulders 800 for display headings.
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-manrope",
+  variable: "--font-ug-sans",
   display: "swap",
 });
 
-const sourceSerif = Source_Serif_4({
+const bigShoulders = Big_Shoulders({
   subsets: ["latin"],
-  variable: "--font-source-serif",
+  weight: "800",
+  variable: "--font-ug-display",
   display: "swap",
 });
 
@@ -20,5 +24,9 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body className={`${manrope.variable} ${sourceSerif.variable}`}>{children}</body></html>;
+  return (
+    <html lang="en" className={`${inter.variable} ${bigShoulders.variable}`}>
+      <body>{children}</body>
+    </html>
+  );
 }
