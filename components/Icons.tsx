@@ -58,7 +58,7 @@ export function TruckIcon(props: IconProps) {
   return <svg {...base(props)}><path d="M3 6h11v10H3V6ZM14 10h4l3 3v3h-7v-6Z"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg>;
 }
 export function MenuIcon(props: IconProps) {
-  return <svg {...base(props)}><path d="M4 7h16M4 12h16M4 17h16"/></svg>;
+  return <svg {...base(props)}><path d="M4 7h16"/><path className="menuMiddleV5" d="M4 12h16"/><path d="M4 17h16"/></svg>;
 }
 export function CloseIcon(props: IconProps) {
   return <svg {...base(props)}><path d="m6 6 12 12M18 6 6 18"/></svg>;
