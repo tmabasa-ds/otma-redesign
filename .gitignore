@@ -1,0 +1,9 @@
+.next
+.vercel
+node_modules
+tmp
+tmp-exact-logo
+.env*
+!.env.example
+*.tsbuildinfo
+npm-debug.log*
