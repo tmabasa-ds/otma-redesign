@@ -708,7 +708,7 @@ export default function QuoteWizard({ compact = false }: { compact?: boolean }) 
       <div className="quoteCard quoteSuccess quoteCard--calculator" id="quote">
         <div className="successIcon"><CheckIcon /></div>
         <p className="eyebrow">MOVE BRIEF READY</p>
-        <h3>Thanks, {formatFirstName(form.name)}.</h3>
+        <h2>Thanks, {formatFirstName(form.name)}.</h2>
         <p>Your detailed move brief has been registered for the On The Move Again team to review. Your reference is <strong>{result.reference}</strong>.</p>
         <div className="briefSubmitted">
           <span>Next step</span>
@@ -730,7 +730,7 @@ export default function QuoteWizard({ compact = false }: { compact?: boolean }) 
       <div className="quoteHead">
         <div>
           <p className="eyebrow">REQUEST A DETAILED QUOTE</p>
-          <h3>{step === 1 ? "Where is the move taking place?" : step === 2 ? "Tell us what needs attention." : "Send your move brief."}</h3>
+          <h2>{step === 1 ? "Where is the move taking place?" : step === 2 ? "Tell us what needs attention." : "Send your move brief."}</h2>
           <p>{step === 1 ? "Start with the collection and delivery locations." : step === 2 ? "Add the details that help the team prepare a useful manual quote." : "Choose WhatsApp or email and send the completed details to On The Move Again."}</p>
         </div>
         <span className="stepCounter">{step}/3</span>
@@ -751,7 +751,7 @@ export default function QuoteWizard({ compact = false }: { compact?: boolean }) 
 
       {step === 1 && (
         <div className="formStep">
-          <div className="quoteStepIntro"><h4>Your route</h4><p>Use a street, suburb, complex or landmark. If we cannot match the exact address, you can use it as entered.</p></div>
+          <div className="quoteStepIntro"><h3>Your route</h3><p>Use a street, suburb, complex or landmark. If we cannot match the exact address, you can use it as entered.</p></div>
           <AddressInput field="pickup" label="Pickup address" address={form.pickup} suggestions={activeAddress === "pickup" ? suggestions : []} onlineSearchState={addressSearchState.pickup} onFocus={() => focusAddress("pickup")} onChange={(value) => updateAddress("pickup", value)} onSelect={(location) => selectAddress("pickup", location)} onUseTyped={() => useTypedAddress("pickup")} onSearchOnline={() => void searchOnline("pickup")} />
           <AddressInput field="dropoff" label="Drop-off address" address={form.dropoff} suggestions={activeAddress === "dropoff" ? suggestions : []} onlineSearchState={addressSearchState.dropoff} onFocus={() => focusAddress("dropoff")} onChange={(value) => updateAddress("dropoff", value)} onSelect={(location) => selectAddress("dropoff", location)} onUseTyped={() => useTypedAddress("dropoff")} onSearchOnline={() => void searchOnline("dropoff")} />
           <div className="addressProgress"><span className={form.pickup.confirmed ? "complete" : ""}>{form.pickup.confirmed ? "✓" : "1"} Pickup {form.pickup.confirmed ? "confirmed" : "match"}</span><span className={form.dropoff.confirmed ? "complete" : ""}>{form.dropoff.confirmed ? "✓" : "2"} Drop-off {form.dropoff.confirmed ? "confirmed" : "match"}</span></div>
@@ -762,12 +762,12 @@ export default function QuoteWizard({ compact = false }: { compact?: boolean }) 
 
       {step === 2 && (
         <div className="formStep">
-          <div className="quoteStepIntro"><h4>Move type</h4><p>Choose the option that best describes the request.</p></div>
+          <div className="quoteStepIntro"><h3>Move type</h3><p>Choose the option that best describes the request.</p></div>
           <div className="moveTypeGrid">
             {moveTypeOptions.map((option) => <button type="button" key={option.value} className={"moveSizeOption " + (form.moveType === option.value ? "selected" : "")} aria-pressed={form.moveType === option.value} onClick={() => setField("moveType", option.value)}><strong>{option.label}</strong><span>{option.description}</span></button>)}
           </div>
 
-          <div className="quoteStepIntro quoteStepIntro--row"><h4>Room-by-room inventory</h4><span>{itemCount} selected</span></div>
+          <div className="quoteStepIntro quoteStepIntro--row"><h3>Room-by-room inventory</h3><span>{itemCount} selected</span></div>
           <p className="inventoryPlannerHint">Add quantities in each room so the team can plan the right vehicle, crew and handling approach.</p>
           <div className="inventoryPlanner">
             {inventoryRoomGroups.map((room) => (
@@ -789,7 +789,7 @@ export default function QuoteWizard({ compact = false }: { compact?: boolean }) 
             <label>Bed size <span className="optional">if applicable</span><select value={form.bedSize} onChange={(event) => setField("bedSize", event.target.value)}><option value="">Not specified</option><option value="Single">Single</option><option value="Queen">Queen</option><option value="King">King</option></select></label>
           </div>
 
-          <div className="quoteStepIntro quoteStepIntro--row"><h4>Pot plants</h4><span>{plantCount} selected</span></div>
+          <div className="quoteStepIntro quoteStepIntro--row"><h3>Pot plants</h3><span>{plantCount} selected</span></div>
           <div className="plantGrid">
             {plantOptions.map((plant) => <div className="inventoryItem" key={plant.key}><div className="inventoryItemInfo"><strong>{plant.label}</strong><span>Pot plant</span></div><div className="quantityControl"><button type="button" aria-label={"Remove " + plant.label + " pot plant"} disabled={!form.plants[plant.key]} onClick={() => adjustPlant(plant.key, -1)}>−</button><span>{form.plants[plant.key]}</span><button type="button" aria-label={"Add " + plant.label + " pot plant"} onClick={() => adjustPlant(plant.key, 1)}>+</button></div></div>)}
           </div>
@@ -834,7 +834,7 @@ export default function QuoteWizard({ compact = false }: { compact?: boolean }) 
           <fieldset><legend>Storage facilities</legend><div className="choiceGrid">{["Yes", "No", "Not sure"].map((option) => <label className={"choice " + (form.storageNeeded === option ? "selected" : "")} key={option}><input type="radio" name="storageNeeded" value={option} checked={form.storageNeeded === option} onChange={(event) => setField("storageNeeded", event.target.value)} />{option}</label>)}</div></fieldset>
 
           <div className="quotePhotoBlock">
-            <div className="quoteStepIntro"><h4>Upload photos of your items <span className="optional">optional</span></h4><p>Photos of bulky, fragile or awkward items help the team assess the move more accurately.</p></div>
+            <div className="quoteStepIntro"><h3>Upload photos of your items <span className="optional">optional</span></h3><p>Photos of bulky, fragile or awkward items help the team assess the move more accurately.</p></div>
             <div className="photoUpload"><label className="photoUploadButton" htmlFor="quote-photos"><CameraIcon /><span><strong>{photos.length > 0 ? "Add more photos" : "Choose item photos"}</strong><small>JPG, PNG, WEBP or HEIC · up to {MAX_PHOTOS} photos · 8 MB each</small></span></label><input id="quote-photos" type="file" accept="image/jpeg,image/png,image/webp,image/heic,image/heif" multiple onChange={handlePhotoChange} /></div>
             {photos.length > 0 && <div className="photoGrid" aria-label="Selected item photos">{photos.map((photo, index) => <figure className="photoPreview" key={photo.id}><img src={photo.previewUrl} alt={"Selected item photo " + (index + 1)} /><button type="button" aria-label={"Remove photo " + (index + 1)} onClick={() => removePhoto(photo.id)}>×</button><figcaption>{photo.file.name}</figcaption></figure>)}</div>}
           </div>
@@ -860,12 +860,12 @@ export default function QuoteWizard({ compact = false }: { compact?: boolean }) 
             <label>Your name *<input value={form.name} onChange={(event) => setField("name", event.target.value)} placeholder="Full name" required /></label>
             <label>Phone / WhatsApp number *<input type="tel" value={form.phone} onChange={(event) => setField("phone", event.target.value)} placeholder="+27 ..." required /></label>
           </div>
-          <div className="confirmationChoice"><div className="quoteStepIntro"><h4>How should the completed brief be sent?</h4><p>Choose WhatsApp or email. The team will review the details and send your quote manually.</p></div><div className="confirmationGrid"><button type="button" className={"confirmationOption " + (form.confirmationChannel === "whatsapp" ? "selected" : "")} onClick={() => setField("confirmationChannel", "whatsapp")}><WhatsAppIcon /><span><strong>WhatsApp</strong><small>Open a ready-to-send message</small></span></button><button type="button" className={"confirmationOption " + (form.confirmationChannel === "email" ? "selected" : "")} onClick={() => setField("confirmationChannel", "email")}><MailIcon /><span><strong>Email</strong><small>Open a ready-to-send email</small></span></button></div><p className="confirmationHint">The final step opens your selected channel with the move details and reference.</p></div>
+          <div className="confirmationChoice"><div className="quoteStepIntro"><h3>How should the completed brief be sent?</h3><p>Choose WhatsApp or email. The team will review the details and send your quote manually.</p></div><div className="confirmationGrid"><button type="button" className={"confirmationOption " + (form.confirmationChannel === "whatsapp" ? "selected" : "")} onClick={() => setField("confirmationChannel", "whatsapp")}><WhatsAppIcon /><span><strong>WhatsApp</strong><small>Open a ready-to-send message</small></span></button><button type="button" className={"confirmationOption " + (form.confirmationChannel === "email" ? "selected" : "")} onClick={() => setField("confirmationChannel", "email")}><MailIcon /><span><strong>Email</strong><small>Open a ready-to-send email</small></span></button></div><p className="confirmationHint">The final step opens your selected channel with the move details and reference.</p></div>
           {form.confirmationChannel === "email" && <label>Email address *<input type="email" value={form.email} onChange={(event) => setField("email", event.target.value)} placeholder="you@example.com" required /></label>}
           <label>Anything else the team should know? <span className="optional">optional</span><textarea rows={4} value={form.notes} onChange={(event) => setField("notes", event.target.value)} placeholder="Mention fragile items, timing, access or special instructions." /></label>
           <div className="consentAcceptance">
             <div className="quoteStepIntro">
-              <h4>Quote request consent</h4>
+              <h3>Quote request consent</h3>
               <p>Confirm that OTMA may use these details and selected photos to prepare your quote and contact you about this move.</p>
             </div>
             <label className="consentCheckbox">

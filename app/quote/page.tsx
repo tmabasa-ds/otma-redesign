@@ -8,20 +8,19 @@ export default function QuotePage() {
   return (
     <>
       <Header />
-      <main className="quotePage">
+      <main className="quotePageV4">
         <InteriorHero
-          eyebrow="REQUEST A DETAILED QUOTE"
-          title="Give us the move before moving day."
-          intro="Share the route, items, packing needs, access details and optional photos. OTMA can review the full brief before preparing your quote."
+          eyebrow="Request a detailed quote"
+          title="Tell us what the move actually involves."
+          intro="Share the route, items, packing needs, access details, preferred date and optional photos. OTMA can review the full brief before preparing your quotation."
           image={otmaImages.fleet}
         />
-        <section className="section quotePageSection">
-          <div className="shell quotePageGrid">
-            <div className="quotePageCopy">
-              <p className="otmaSectionEyebrow">HOW IT WORKS</p>
-              <h2>A cleaner brief makes for a cleaner quote.</h2>
-              <p>Capture the key details once, then choose WhatsApp or email for the final handoff to the team.</p>
-              <div className="quoteAside"><strong>No instant-price gimmicks.</strong><span>The team reviews the full request and prepares the quotation around the actual move.</span></div>
+        <section className="quotePageV4Body sectionV4">
+          <div className="shell">
+            <div className="quotePageV4Header">
+              <p className="premiumLabel">Your move brief</p>
+              <h1>One place for the details that shape moving day.</h1>
+              <p>Complete the brief once, then choose WhatsApp or email for the final handoff to the team.</p>
             </div>
             <QuoteWizard />
           </div>

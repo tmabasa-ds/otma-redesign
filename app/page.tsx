@@ -1,25 +1,13 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import QuoteWizard from "@/components/QuoteWizard";
-import { ArrowRightIcon, CheckIcon, MapPinIcon, PhoneIcon, TruckIcon, WhatsAppIcon } from "@/components/Icons";
+import { ArrowRightIcon, PhoneIcon, WhatsAppIcon } from "@/components/Icons";
 import { company, otmaImages, services } from "@/lib/site";
 
 const reviews = [
-  {
-    quote: "Exceptional pricing, exceptional communication, exceptional preparation and an exceptional moving team.",
-    name: "Ken de Melo",
-    meta: "Google review · January 2025",
-  },
-  {
-    quote: "Friendly, efficient, precise and professional. The team went out of their way to make the move effortless.",
-    name: "Local customer",
-    meta: "Public customer review",
-  },
-  {
-    quote: "Andre kept in contact throughout the day. The move was seamless and the crew were prompt and professional.",
-    name: "Repeat referral customer",
-    meta: "Public customer review",
-  },
+  { quote: "Exceptional pricing, exceptional communication, exceptional preparation and an exceptional moving team.", name: "Ken de Melo", meta: "Google review · January 2025" },
+  { quote: "Friendly, efficient, precise and professional. The team went out of their way to make the move effortless.", name: "Local customer", meta: "Public customer review" },
+  { quote: "Andre kept in contact throughout the day. The move was seamless and the crew were prompt and professional.", name: "Repeat referral customer", meta: "Public customer review" },
 ];
 
 export default function HomePage() {
@@ -27,64 +15,58 @@ export default function HomePage() {
     <>
       <Header />
       <main>
-        <section className="otmaHeroV3">
-          <div className="shell otmaHeroV3Grid">
-            <div className="otmaHeroV3Copy">
-              <p className="otmaKicker">ON THE MOVE AGAIN · ALBERTON</p>
-              <h1>Your move.<br /><span>Properly planned.</span></h1>
-              <p className="otmaHeroLead">Home, office and long-distance moving backed by a visible fleet, a hands-on team and a quote process built around the details that actually shape moving day.</p>
-              <div className="otmaHeroActions">
-                <a className="btn btnPrimary" href="/quote">Plan my move <ArrowRightIcon /></a>
-                <a className="otmaTextAction" href={`https://wa.me/${company.phoneRaw}`} target="_blank" rel="noreferrer"><WhatsAppIcon /> WhatsApp OTMA</a>
-              </div>
-              <div className="otmaHeroProof">
-                <span><CheckIcon /> Household moves</span>
-                <span><CheckIcon /> National transport</span>
-                <span><CheckIcon /> Boxes, crates, storage</span>
+        <section className="homeHeroV4">
+          <img className="homeHeroV4Media" src={otmaImages.crew} alt="The On The Move Again crew standing in front of the company moving fleet" />
+          <div className="homeHeroV4Shade" />
+          <div className="shell homeHeroV4Inner">
+            <div className="homeHeroV4Copy">
+              <p className="premiumLabel premiumLabel--light">On The Move Again · Alberton, Gauteng</p>
+              <h1>Making your move a breeze.</h1>
+              <p>Home, office and long-distance moving with a real crew, a visible fleet and a quote process built around the details that matter on moving day.</p>
+              <div className="homeHeroV4Actions">
+                <a className="btn btnHeroLight" href="/quote">Request a quote <ArrowRightIcon /></a>
+                <a className="heroWhatsAppV4" href={`https://wa.me/${company.phoneRaw}`} target="_blank" rel="noreferrer"><WhatsAppIcon /> WhatsApp the team</a>
               </div>
             </div>
-            <div className="otmaHeroV3Visual">
-              <img src={otmaImages.crew} alt="The On The Move Again moving crew standing in front of the company fleet" />
-              <div className="otmaHeroImageCaption">
-                <span>THE OTMA CREW</span>
-                <strong>Real people. Real fleet.</strong>
-                <small>Alberton, Gauteng</small>
-              </div>
+            <div className="homeHeroV4Footer" role="group" aria-label="Services offered" tabIndex={0}>
+              <span>Household moves</span><span>Office relocations</span><span>National transport</span><span>Boxes · crates · storage</span>
             </div>
           </div>
         </section>
 
-        <section className="otmaSignalBar">
-          <div className="shell">
-            <div><span>01</span><strong>Tell us where</strong><small>Pickup + destination</small></div>
-            <div><span>02</span><strong>Tell us what</strong><small>Rooms + large items</small></div>
-            <div><span>03</span><strong>Tell us the access</strong><small>Stairs + estates + restrictions</small></div>
-            <a href="/quote">Build the move brief <ArrowRightIcon /></a>
-          </div>
-        </section>
-
-        <section className="section otmaStatement">
-          <div className="shell otmaStatementGrid">
-            <p className="otmaSectionEyebrow">MAKING YOUR MOVE A BREEZE</p>
+        <section className="sectionV4 introV4">
+          <div className="shell introV4Grid">
+            <p className="premiumLabel">A better moving experience</p>
             <div>
-              <h2>Moving is personal. You should know who is showing up.</h2>
-              <p>Meet the actual team, see the fleet and send the practical details before moving day. The more the crew knows upfront, the easier it is to prepare for the job in front of them.</p>
+              <h2>Moving should feel organised before the truck arrives.</h2>
+              <p>The best moving days are not improvised. OTMA starts with the route, what is moving, how the property can be accessed and what support the job needs. That gives the team a clearer picture before moving day begins.</p>
+              <a className="textLinkV4" href="/quote">Build your move brief <ArrowRightIcon /></a>
             </div>
           </div>
         </section>
 
-        <section className="section otmaServicesV3" id="services">
-          <div className="shell">
-            <div className="otmaSectionHeader">
-              <div><p className="otmaSectionEyebrow">WHAT OTMA HANDLES</p><h2>One move, with the practical pieces around it.</h2></div>
-              <p>Household moves, business relocations, national transport and the practical support around them can all be scoped from one clear starting point.</p>
+        <section className="homeServiceStoryV4">
+          <div className="homeServiceStoryV4Image"><img src={otmaImages.team} alt="On The Move Again team members beside a blue and white moving truck" /></div>
+          <div className="homeServiceStoryV4Copy">
+            <p className="premiumLabel">Home & office moves</p>
+            <h2>The people who arrive matter as much as the vehicle.</h2>
+            <p>You are trusting a moving team with the contents of your home or workplace. The people, the communication and the preparation matter just as much as the vehicle.</p>
+            <a className="textLinkV4" href="/about">Meet On The Move Again <ArrowRightIcon /></a>
+          </div>
+        </section>
+
+        <section className="sectionV4 servicesMenuV4">
+          <div className="shell servicesMenuV4Grid">
+            <div className="servicesMenuV4Intro">
+              <p className="premiumLabel">Services</p>
+              <h2>Moving services and practical support in one place.</h2>
+              <p>Household removals, office relocations, national transport and practical support such as boxes, crate rental, cleaning and storage.</p>
             </div>
-            <div className="otmaServiceEditorial">
+            <div className="servicesMenuV4List">
               {services.map((service, index) => (
-                <a className="otmaServiceEditorialRow" href="/quote" key={service.title}>
+                <a href="/quote" key={service.title}>
                   <span>{String(index + 1).padStart(2, "0")}</span>
                   <h3>{service.title}</h3>
-                  <p>{service.description}</p>
                   <ArrowRightIcon />
                 </a>
               ))}
@@ -92,94 +74,55 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="otmaFleetFeature">
-          <div className="shell otmaFleetFeatureGrid">
-            <div className="otmaFleetFeatureCopy">
-              <p className="otmaSectionEyebrow">THE FLEET IS PART OF THE BRAND</p>
-              <h2>A visible fleet. Ready for real moving work.</h2>
-              <p>From smaller support vehicles to larger curtain-side trucks, OTMA can prepare the move around the load, the route and the access available at each property.</p>
-              <a className="otmaInline" href="/about">Meet On The Move Again <ArrowRightIcon /></a>
-            </div>
-            <figure className="otmaFleetFeatureMain"><img src={otmaImages.fleet} alt="On The Move Again fleet of white and blue moving trucks" /></figure>
-            <figure className="otmaFleetFeatureSide"><img src={otmaImages.singleTruck} alt="A large On The Move Again curtain-side moving truck" /></figure>
+        <section className="fleetPanoramaV4">
+          <img src={otmaImages.fleet} alt="A lineup of On The Move Again moving trucks" />
+          <div className="fleetPanoramaV4Shade" />
+          <div className="shell fleetPanoramaV4Inner">
+            <p className="premiumLabel premiumLabel--light">The OTMA fleet</p>
+            <h2>A visible fleet, prepared for different kinds of moves.</h2>
+            <p>From support vehicles to larger curtain-side trucks, the fleet is part of how OTMA prepares for different loads, routes and access conditions.</p>
           </div>
         </section>
 
-        <section className="section otmaPeopleSection">
-          <div className="shell otmaPeopleGrid">
-            <div className="otmaPeopleImage"><img src={otmaImages.team} alt="Two On The Move Again team members standing in front of a moving truck" /></div>
-            <div className="otmaPeopleCopy">
-              <p className="otmaSectionEyebrow">A COMPANY WITH FACES</p>
-              <h2>You are trusting strangers with the contents of your home. They should not feel anonymous.</h2>
-              <p>A good move is not just about the vehicle. It is about the people loading, carrying, communicating and keeping the job moving when the day gets complicated.</p>
-              <div className="otmaPeopleFacts">
-                <div><TruckIcon /><span><strong>Local + national moves</strong><small>From an Alberton base</small></span></div>
-                <div><MapPinIcon /><span><strong>Access-aware planning</strong><small>Complexes, stairs and truck restrictions captured upfront</small></span></div>
-                <div><PhoneIcon /><span><strong>Direct contact</strong><small>{company.phoneDisplay}</small></span></div>
-              </div>
+        <section className="sectionV4 supportV4">
+          <div className="shell supportV4Grid">
+            <div className="supportV4Copy">
+              <p className="premiumLabel">The move around the move</p>
+              <h2>Practical support beyond transport.</h2>
+              <p>Sometimes the practical extras become the stressful part. OTMA can include them in the same move conversation so fewer details are left until the last minute.</p>
+              <a className="btn btnInkV4" href="/services">Explore services <ArrowRightIcon /></a>
             </div>
+            <figure className="supportV4Image"><img src={otmaImages.van} alt="On The Move Again branded support vehicle" /></figure>
           </div>
         </section>
 
-        <section className="section otmaSupportSection">
-          <div className="shell otmaSupportGrid">
-            <div className="otmaSupportCopy">
-              <p className="otmaSectionEyebrow">THE MOVE AROUND THE MOVE</p>
-              <h2>Boxes. Crates. Storage. Cleaning. Transport.</h2>
-              <p>The move often needs more than transport. Boxes, crate rentals, storage and cleaning can be added to the same conversation so fewer practical details are left until the last minute.</p>
-              <a className="btn btnDark" href="/services">Explore services <ArrowRightIcon /></a>
-            </div>
-            <div className="otmaSupportMedia">
-              <img src={otmaImages.van} alt="On The Move Again branded support vehicle" />
-              <div className="otmaSupportTag">MAKING YOUR MOVE A BREEZE</div>
-            </div>
-          </div>
-        </section>
-
-        <section className="section otmaQuote" id="quote">
-          <div className="shell otmaQuoteGrid">
-            <div className="otmaQuoteIntro">
-              <p className="otmaSectionEyebrow">A QUOTE FORM THAT ACTUALLY HELPS</p>
-              <h2>Give OTMA the move, not just your phone number.</h2>
-              <p>The route, inventory, access, packing needs and optional photos all affect the job. Capture them once so the team can review a more complete request before preparing the quotation.</p>
-              <div className="otmaQuoteSteps">
-                <div><span>01</span><strong>Route</strong><small>Pickup + destination</small></div>
-                <div><span>02</span><strong>Inventory</strong><small>Rooms + large items</small></div>
-                <div><span>03</span><strong>Access</strong><small>Stairs + restrictions</small></div>
-                <div><span>04</span><strong>Handoff</strong><small>WhatsApp or email</small></div>
-              </div>
-            </div>
-            <QuoteWizard />
-          </div>
-        </section>
-
-        <section className="section otmaReviewsV3">
+        <section className="sectionV4 quoteExperienceV4" id="quote">
           <div className="shell">
-            <div className="otmaReviewsV3Header">
-              <p className="otmaSectionEyebrow">WHAT PEOPLE REMEMBER</p>
-              <h2>Communication. Preparation. The crew.</h2>
+            <div className="quoteExperienceV4Intro">
+              <p className="premiumLabel">Request a detailed quote</p>
+              <h2>A detailed move brief gives the team a better starting point.</h2>
+              <p>Pickup and destination, room-by-room inventory, access, packing requirements, preferred date and optional photos are captured in one clear move brief before the team prepares the quotation.</p>
             </div>
-            <div className="otmaReviewsV3List">
-              {reviews.map((review, index) => (
-                <article key={review.quote}>
-                  <span>{String(index + 1).padStart(2, "0")}</span>
-                  <blockquote>“{review.quote}”</blockquote>
-                  <div><strong>{review.name}</strong><small>{review.meta}</small></div>
-                </article>
-              ))}
+            <div className="quoteWizardFrameV4"><QuoteWizard /></div>
+          </div>
+        </section>
+
+        <section className="sectionV4 reviewsV4">
+          <div className="shell reviewsV4Grid">
+            <div className="reviewsV4Lead"><p className="premiumLabel">Customer feedback</p><h2>What people remember is how the move felt.</h2></div>
+            <div className="reviewsV4List">
+              {reviews.map((review) => <blockquote key={review.quote}><p>“{review.quote}”</p><footer><strong>{review.name}</strong><span>{review.meta}</span></footer></blockquote>)}
             </div>
           </div>
         </section>
 
-        <section className="otmaFinalV3">
-          <div className="otmaFinalV3Media"><img src={otmaImages.singleTruck} alt="On The Move Again truck" /></div>
-          <div className="shell otmaFinalV3Inner">
-            <p className="otmaSectionEyebrow">READY WHEN YOU ARE</p>
+        <section className="finalImageCtaV4">
+          <img src={otmaImages.singleTruck} alt="On The Move Again moving truck" />
+          <div className="finalImageCtaV4Shade" />
+          <div className="shell finalImageCtaV4Inner">
+            <p className="premiumLabel premiumLabel--light">Ready when you are</p>
             <h2>Where are we moving you?</h2>
-            <div>
-              <a className="btn btnLight" href="/quote">Request a quote <ArrowRightIcon /></a>
-              <a href={`tel:+${company.phoneRaw}`}><PhoneIcon /> {company.phoneDisplay}</a>
-            </div>
+            <div><a className="btn btnHeroLight" href="/quote">Request a quote <ArrowRightIcon /></a><a href={`tel:+${company.phoneRaw}`}><PhoneIcon /> {company.phoneDisplay}</a></div>
           </div>
         </section>
       </main>
