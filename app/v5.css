@@ -36,7 +36,7 @@ a { text-decoration: none; color: inherit; }
 .textLinkV5 svg { width: 15px; }
 
 /* Header */
-.otmaHeaderV5 { position: relative; z-index: 100; background: #fff; border-bottom: 0; }
+.otmaHeaderV5 { position: sticky; top: 0; z-index: 100; background: #fff; border-bottom: 0; }
 .otmaHeaderV5::after { content: ""; position: absolute; z-index: 2; left: 0; right: 0; bottom: -1px; height: 2px; pointer-events: none; background: linear-gradient(90deg, transparent 0%, rgba(0,142,205,.08) 18%, rgba(0,142,205,.72) 50%, rgba(0,142,205,.08) 82%, transparent 100%); }
 .otmaHeaderV5Inner { min-height: 82px; display: grid; grid-template-columns: 150px 1fr auto; align-items: center; gap: 44px; }
 .otmaHeaderV5 .brand { display: inline-flex; align-items: center; width: fit-content; padding: 4px 0 6px; }
@@ -158,7 +158,7 @@ a { text-decoration: none; color: inherit; }
 .reviewsV5 blockquote footer strong { color: var(--otma-ink); font-weight: 600; }
 .reviewsV5 blockquote footer span { color: var(--otma-muted); }
 .reviewSecondaryV5 { max-width: 650px; margin: 58px 0 0 auto; padding-top: 26px; border-top: 1px solid var(--otma-line); }
-.reviewSecondaryV5 p { margin: 0 0 16px; color: var(--otma-text); font-size: 18px; line-height: 1.55; }
+.reviewSecondaryV5 p { margin: 0 0 16px; color: var(--otma-text); font-family: var(--font-ug-display), "Arial Narrow", Impact, sans-serif; font-size: 18px; line-height: 1.1; letter-spacing: -.045em; font-weight: 800; }
 .reviewSecondaryV5 span { color: var(--otma-muted); font-size: 11px; }
 
 /* Final CTA */
