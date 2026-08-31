@@ -36,12 +36,12 @@ a { text-decoration: none; color: inherit; }
 .textLinkV5 svg { width: 15px; }
 
 /* Header */
-.otmaHeaderV5 { position: relative; z-index: 100; background: #fff; border-bottom: 1px solid #e5e7e8; }
+.otmaHeaderV5 { position: relative; z-index: 100; background: #fff; border-bottom: 0; }
+.otmaHeaderV5::after { content: ""; position: absolute; z-index: 2; left: 0; right: 0; bottom: -1px; height: 2px; pointer-events: none; background: linear-gradient(90deg, transparent 0%, rgba(0,142,205,.08) 18%, rgba(0,142,205,.72) 50%, rgba(0,142,205,.08) 82%, transparent 100%); }
 .otmaHeaderV5Inner { min-height: 82px; display: grid; grid-template-columns: 150px 1fr auto; align-items: center; gap: 44px; }
-.otmaHeaderV5 .brand { position: relative; display: inline-flex; align-items: center; width: fit-content; padding: 4px 0 6px; }
-.otmaHeaderV5 .brand::after { content: ""; position: absolute; left: 0; bottom: 1px; width: 38px; height: 3px; background: var(--otma-blue); }
+.otmaHeaderV5 .brand { display: inline-flex; align-items: center; width: fit-content; padding: 4px 0 6px; }
 .otmaHeaderV5 .brand__asset--full { display: none !important; }
-.otmaHeaderV5 .brand__asset--compact { display: block !important; width: 132px; height: auto; }
+.otmaHeaderV5 .brand__asset--compact { display: block !important; width: 110px; height: auto; }
 .otmaNavV5 { display: flex; align-items: stretch; justify-content: center; gap: clamp(20px, 2.3vw, 32px); height: 100%; }
 .otmaNavV5 a { position: relative; display: inline-flex; align-items: center; color: #4a555b; font-size: 11px; font-weight: 650; letter-spacing: .055em; text-transform: uppercase; transition: color .2s ease; }
 .otmaNavV5 a::after { content: ""; position: absolute; left: 0; right: 0; bottom: 14px; height: 2px; background: var(--otma-blue); transform: scaleX(0); transform-origin: left; transition: transform .2s ease; }
@@ -260,7 +260,7 @@ a { text-decoration: none; color: inherit; }
   .sectionV5 { padding: 88px 0; }
   .otmaHeaderV5Inner { min-height: 72px; grid-template-columns: 1fr auto; }
   .otmaHeaderV5 .brand { padding: 3px 0 5px; }
-  .otmaHeaderV5 .brand__asset--compact { width: 122px; }
+  .otmaHeaderV5 .brand__asset--compact { width: 100px; }
   .otmaNavV5, .otmaHeaderV5Actions { display: none; }
   .otmaMenuV5 { width: 42px; height: 42px; display: grid; place-items: center; border: 0; background: transparent; color: var(--otma-ink); }
   .otmaMenuV5 svg { width: 21px; }
