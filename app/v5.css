@@ -37,16 +37,19 @@ a { text-decoration: none; color: inherit; }
 
 /* Header */
 .otmaHeaderV5 { position: relative; z-index: 100; background: #fff; border-bottom: 1px solid #e5e7e8; }
-.otmaHeaderV5Inner { min-height: 78px; display: grid; grid-template-columns: 210px 1fr auto; align-items: center; gap: 38px; }
-.otmaHeaderV5 .brand { display: inline-flex; align-items: center; }
+.otmaHeaderV5Inner { min-height: 82px; display: grid; grid-template-columns: 150px 1fr auto; align-items: center; gap: 44px; }
+.otmaHeaderV5 .brand { position: relative; display: inline-flex; align-items: center; width: fit-content; padding: 4px 0 6px; }
+.otmaHeaderV5 .brand::after { content: ""; position: absolute; left: 0; bottom: 1px; width: 38px; height: 3px; background: var(--otma-blue); }
 .otmaHeaderV5 .brand__asset--full { display: none !important; }
-.otmaHeaderV5 .brand__asset--compact { display: block !important; width: 166px; height: auto; }
-.otmaNavV5 { display: flex; justify-content: center; gap: 34px; }
-.otmaNavV5 a { color: #3f4b52; font-size: 12px; font-weight: 500; transition: color .2s ease; }
-.otmaNavV5 a:hover { color: var(--otma-blue-dark); }
-.otmaHeaderV5Actions { display: flex; align-items: center; gap: 20px; }
-.otmaHeaderPhoneV5 { color: #4d5960; font-size: 12px; font-weight: 500; }
-.otmaHeaderQuoteV5 { min-height: 44px; padding: 0 18px; display: inline-flex; align-items: center; justify-content: center; background: var(--otma-blue); color: var(--otma-ink) !important; font-size: 12px; font-weight: 600; transition: background .2s ease, color .2s ease; }
+.otmaHeaderV5 .brand__asset--compact { display: block !important; width: 132px; height: auto; }
+.otmaNavV5 { display: flex; align-items: stretch; justify-content: center; gap: clamp(20px, 2.3vw, 32px); height: 100%; }
+.otmaNavV5 a { position: relative; display: inline-flex; align-items: center; color: #4a555b; font-size: 11px; font-weight: 650; letter-spacing: .055em; text-transform: uppercase; transition: color .2s ease; }
+.otmaNavV5 a::after { content: ""; position: absolute; left: 0; right: 0; bottom: 14px; height: 2px; background: var(--otma-blue); transform: scaleX(0); transform-origin: left; transition: transform .2s ease; }
+.otmaNavV5 a:hover, .otmaNavV5 a.active { color: var(--otma-ink); }
+.otmaNavV5 a:hover::after, .otmaNavV5 a.active::after { transform: scaleX(1); }
+.otmaHeaderV5Actions { display: flex; align-items: center; gap: 16px; }
+.otmaHeaderPhoneV5 { padding-right: 16px; border-right: 1px solid var(--otma-line); color: #4d5960; font-size: 11px; font-weight: 500; letter-spacing: .035em; white-space: nowrap; }
+.otmaHeaderQuoteV5 { min-height: 44px; padding: 0 20px; display: inline-flex; align-items: center; justify-content: center; background: var(--otma-blue); color: var(--otma-ink) !important; font-size: 11px; font-weight: 650; letter-spacing: .035em; text-transform: uppercase; transition: background .2s ease, color .2s ease; }
 .otmaHeaderQuoteV5:hover { background: var(--otma-blue-dark); color: #fff !important; }
 .otmaMenuV5, .otmaMobileNavV5, .otmaMobileBottomV5 { display: none; }
 
@@ -243,8 +246,8 @@ a { text-decoration: none; color: inherit; }
 
 @media (max-width: 1100px) {
   .shellV5 { width: min(100% - 48px, 1260px); }
-  .otmaHeaderV5Inner { grid-template-columns: 180px 1fr auto; gap: 24px; }
-  .otmaNavV5 { gap: 22px; }
+  .otmaHeaderV5Inner { grid-template-columns: 150px 1fr auto; gap: 24px; }
+  .otmaNavV5 { gap: 20px; }
   .otmaHeaderPhoneV5 { display: none; }
   .introV5Grid { gap: 70px; }
   .servicesV5Grid, .quoteSectionV5Grid, .quotePageGridV5 { gap: 60px; }
@@ -256,11 +259,13 @@ a { text-decoration: none; color: inherit; }
   .shellV5 { width: min(100% - 36px, 1260px); }
   .sectionV5 { padding: 88px 0; }
   .otmaHeaderV5Inner { min-height: 72px; grid-template-columns: 1fr auto; }
-  .otmaHeaderV5 .brand__asset--compact { width: 142px; }
+  .otmaHeaderV5 .brand { padding: 3px 0 5px; }
+  .otmaHeaderV5 .brand__asset--compact { width: 122px; }
   .otmaNavV5, .otmaHeaderV5Actions { display: none; }
   .otmaMenuV5 { width: 42px; height: 42px; display: grid; place-items: center; border: 0; background: transparent; color: var(--otma-ink); }
   .otmaMenuV5 svg { width: 21px; }
   .otmaMenuV5 .menuMiddleV5 { stroke: var(--otma-blue); }
+  .otmaMenuV5:focus-visible { outline: 2px solid var(--otma-blue); outline-offset: 3px; }
   .otmaMobileNavV5 { display: grid; padding: 8px 18px 22px; background: #fff; border-top: 1px solid var(--otma-line); }
   .otmaMobileNavV5 a:not(.otmaHeaderQuoteV5) { padding: 14px 0; border-bottom: 1px solid #eceeee; color: #344048; font-size: 13px; }
   .otmaMobileNavV5 .otmaHeaderQuoteV5 { margin-top: 18px; }
